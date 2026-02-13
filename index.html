@@ -1,104 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>For Mylah 💖</title>
-
-<style>
-body {
-  background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-#card {
-  background: white;
-  padding: 20px;
-  border-radius: 20px;
-  width: 320px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-h2 {
-  color: #ff4d6d;
-}
-
-.gallery img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 15px;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.yes {
-  background: #ff4d6d;
-  color: white;
-}
-
-#no {
-  background: #ccc;
-  position: absolute;
-  left: 180px;
-  top: 260px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mylah 💖</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        /* Ajuste para textos mais longos e sérios */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .texto-serio {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            white-space: pre-line; /* Mantém as quebras de linha do seu texto */
+        }
+    </style>
 </head>
-
 <body>
 
-<div id="card">
-  <h2>Mylah 💕</h2>
-  <p>You make my days brighter and my heart happier ✨</p>
+    <div class="container">
+        <h1>Mylah 💕</h1>
 
-<div class="gallery">
-  <img src="photo2.jpg">
-</div>
+        <p class="texto-serio">
+            Escreva aqui o seu texto sério...
+            Você pode pular linhas normalmente que o site vai respeitar o espaço.
+            Exemplo: "Desde que te conheci, percebi que..."
+        </p>
 
-  <h3>Will you be my Valentine? 💘</h3>
+        <img src="photo2.jpg" alt="Nossa Foto" style="width: 80%; border-radius: 15px;">
 
-  <button class="yes" onclick="yesClick()">Yes 💖</button>
-  <button id="no" onmouseenter="dodge()">No 😢</button>
-</div>
+        <h3 style="margin-top: 30px;">Portanto, eu gostaria de te fazer uma pergunta...</h3>
 
-<script>
-function dodge() {
-  const no = document.getElementById("no");
-  no.style.left = Math.random() * 200 + "px";
-  no.style.top = Math.random() * 280 + "px";
-}
-
-function yesClick() {
-  document.body.innerHTML = `
-    <div style="
-      background: pink;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial;
-      text-align: center;
-    ">
-      <h1>💖 I love you so much, Mylah Gilmore💖<br>Forever my Valentine 🥰</h1>
+        <div class="buttons">
+            <button class="yes-btn" onclick="celebrar()">Sim 💖</button>
+            <button class="no-btn" id="noBtn">Não 😢</button>
+        </div>
     </div>
-  `;
-}
-</script>
 
+    <script>
+        // O botão "Não" foge para manter o tom leve no final
+        const noBtn = document.getElementById('noBtn');
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        });
+
+        function celebrar() {
+            alert("Você me faz a pessoa mais feliz do mundo! Prometo te valorizar todos os dias. ❤️");
+            // Se quiser redirecionar para uma música ou outra página:
+            // window.location.href = "LINK_AQUI";
+        }
+    </script>
 </body>
-</
-
-
+</html>
